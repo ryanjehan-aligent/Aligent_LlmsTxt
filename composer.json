@@ -3,7 +3,7 @@
     "description": "Magento 2 module for generating llms.txt files to make store content accessible to AI assistants",
     "type": "magento2-module",
     "license": "proprietary",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Aligent Consulting",
