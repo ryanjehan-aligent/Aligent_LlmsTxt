@@ -5,13 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Removed
+- Hourly frequency option from scheduling (keeping Daily, Weekly, Monthly, Yearly, and Never)
+
+### Changed
+- Simplified cron generation logic by removing hourly case
+- Updated documentation to reflect available frequency options
+
 ## [1.0.0] - 2025-08-21
 
 ### Added
 - Initial release of Aligent_LlmsTxt module for Adobe Commerce
 - Store-specific llms.txt file generation for AI assistants
 - Configurable content entity selection (CMS Pages, Products, Categories)
-- Flexible scheduling options (hourly, daily, weekly, monthly, yearly)
+- Flexible scheduling options (daily, weekly, monthly, yearly)
 - Manual generation via admin "Generate Now" button
 - Company information customization
 - File status monitoring (existence, size, last generated timestamp)

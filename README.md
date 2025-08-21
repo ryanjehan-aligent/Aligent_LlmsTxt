@@ -13,7 +13,6 @@ The Aligent_LlmsTxt module generates store-specific llms.txt files to make your 
   - Categories
 - **Company Information**: Add custom company name, description, and additional information
 - **Flexible Scheduling**: Set automatic generation frequency:
-  - Hourly
   - Daily (with specific time)
   - Weekly (with specific time)
   - Monthly (with specific time)
@@ -178,8 +177,8 @@ Generated: [Timestamp] GMT
    - `pub/llms_store_2.txt`
 
 ### 3. Scheduling Test
-1. Set frequency to "Hourly"
-2. Wait for cron to run
+1. Set frequency to "Daily"
+2. Wait for cron to run (may need to wait until the next day)
 3. Check if file is regenerated automatically
 4. Verify last generated timestamp updates
 

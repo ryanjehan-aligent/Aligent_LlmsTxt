@@ -14,7 +14,6 @@ class Frequency implements OptionSourceInterface
     public const string FREQUENCY_DAILY = 'daily';
     public const string FREQUENCY_WEEKLY = 'weekly';
     public const string FREQUENCY_MONTHLY = 'monthly';
-    public const string FREQUENCY_HOURLY = 'hourly';
     public const string FREQUENCY_YEARLY = 'yearly';
     public const string FREQUENCY_NEVER = 'never';
 
@@ -25,7 +24,6 @@ class Frequency implements OptionSourceInterface
     {
         return [
             ['value' => self::FREQUENCY_NEVER, 'label' => __('Never (Manual Only)')],
-            ['value' => self::FREQUENCY_HOURLY, 'label' => __('Hourly')],
             ['value' => self::FREQUENCY_DAILY, 'label' => __('Daily')],
             ['value' => self::FREQUENCY_WEEKLY, 'label' => __('Weekly')],
             ['value' => self::FREQUENCY_MONTHLY, 'label' => __('Monthly')],
