@@ -23,29 +23,35 @@ The Aligent_LlmsTxt module generates store-specific llms.txt files to make your 
 
 ## Installation
 
-### Via Composer (Recommended)
+### Via Git Repository (Recommended)
 
-1. Install the module via Composer:
+1. Clone or download the module to your Magento installation:
    ```bash
-   composer require aligent/magento2-llms-txt
+   git clone https://github.com/aligent/magento2-llms-txt.git app/code/Aligent/LlmsTxt
    ```
 
-2. Enable the module:
+2. Or install via Composer using the Git repository:
+   ```bash
+   composer config repositories.aligent-llms-txt git https://github.com/aligent/magento2-llms-txt.git
+   composer require aligent/magento2-llms-txt:dev-main
+   ```
+
+3. Enable the module:
    ```bash
    bin/magento module:enable Aligent_LlmsTxt
    ```
 
-3. Run setup upgrade:
+4. Run setup upgrade:
    ```bash
    bin/magento setup:upgrade
    ```
 
-4. Deploy static content (if in production mode):
+5. Deploy static content (if in production mode):
    ```bash
    bin/magento setup:static-content:deploy
    ```
 
-5. Clear cache:
+6. Clear cache:
    ```bash
    bin/magento cache:clean
    ```
@@ -77,11 +83,40 @@ The Aligent_LlmsTxt module generates store-specific llms.txt files to make your 
    bin/magento cache:clean
    ```
 
+### For Local Development
+
+If you're developing or testing locally, you can use a path repository:
+
+1. Clone the repository to a local directory:
+   ```bash
+   git clone https://github.com/aligent/magento2-llms-txt.git /path/to/local/module
+   ```
+
+2. Add path repository to your Magento's composer.json:
+   ```json
+   {
+     "repositories": [
+       {
+         "type": "path",
+         "url": "/path/to/local/module"
+       }
+     ]
+   }
+   ```
+
+3. Install via Composer:
+   ```bash
+   composer require aligent/magento2-llms-txt
+   ```
+
+4. Follow steps 3-6 from the Git Repository installation method above.
+
 ## Requirements
 
 - PHP 8.1 or higher
 - Adobe Commerce / Magento 2.4.4 or higher
-- Composer (for Composer installation method)
+- Git (for Git repository installation method)
+- Composer (for Composer-based installation methods)
 
 ## Configuration
 
