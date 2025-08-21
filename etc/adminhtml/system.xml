@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright Aligent All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aligent" translate="label" sortOrder="999">
+            <label>Aligent</label>
+        </tab>
+        <section id="aligent_llmstxt" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>LLMs.txt Configuration</label>
+            <tab>aligent</tab>
+            <resource>Aligent_LlmsTxt::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable LLMs.txt Generation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="company_name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Company Name</label>
+                    <comment>Company name to display in the llms.txt file</comment>
+                </field>
+                <field id="description" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <comment>Description to include in the llms.txt file</comment>
+                </field>
+                <field id="extra_info" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Extra Information</label>
+                    <comment>Additional information to include in the llms.txt file</comment>
+                </field>
+            </group>
+            <group id="entities" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Entity Selection</label>
+                <field id="include_cms_pages" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include CMS Pages</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="include_products" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="include_categories" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include Categories</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="product_limit" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Limit</label>
+                    <comment>Maximum number of products to include (0 for unlimited)</comment>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <depends>
+                        <field id="include_products">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="schedule" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Generation Schedule</label>
+                <field id="frequency" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Generation Frequency</label>
+                    <source_model>Aligent\LlmsTxt\Model\Config\Source\Frequency</source_model>
+                </field>
+                <field id="time" translate="label comment" type="time" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Generation Time</label>
+                    <comment>Time when the file should be generated (HH:MM:SS)</comment>
+                </field>
+            </group>
+            <group id="status" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>File Status</label>
+                <field id="last_generated" translate="label" type="note" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Last Generated</label>
+                    <frontend_model>Aligent\LlmsTxt\Block\Adminhtml\System\Config\LastGenerated</frontend_model>
+                </field>
+                <field id="file_exists" translate="label" type="note" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>File Status</label>
+                    <frontend_model>Aligent\LlmsTxt\Block\Adminhtml\System\Config\FileStatus</frontend_model>
+                </field>
+                <field id="generate_now" translate="label comment" type="button" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Generate Now</label>
+                    <frontend_model>Aligent\LlmsTxt\Block\Adminhtml\System\Config\GenerateButton</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright Aligent All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * @var \Aligent\LlmsTxt\Block\Adminhtml\System\Config\GenerateButton $block
+ */
+?>
+<script>
+require(['jquery', 'Magento_Ui/js/modal/alert'], function($, alert) {
+    $('#llmstxt_generate_button').click(function () {
+        var params = {};
+        var storeParam = $('[name="store"]').val();
+        var websiteParam = $('[name="website"]').val();
+
+        if (storeParam) {
+            params.store = storeParam;
+        } else if (websiteParam) {
+            params.website = websiteParam;
+        }
+
+        new Ajax.Request('<?= $block->escapeJs($block->getAjaxUrl()) ?>', {
+            parameters: params,
+            loaderArea: false,
+            asynchronous: true,
+            onCreate: function() {
+                $('#llmstxt_generate_button').prop('disabled', true).text('<?= __('Generating...') ?>');
+            },
+            onSuccess: function(response) {
+                $('#llmstxt_generate_button').prop('disabled', false).text('<?= __('Generate Now') ?>');
+                if (response.responseJSON && response.responseJSON.success) {
+                    alert({
+                        title: '<?= __('Success') ?>',
+                        content: response.responseJSON.message || '<?= __('LLMs.txt file has been generated successfully.') ?>'
+                    });
+                    // Reload the page to update file status
+                    location.reload();
+                } else {
+                    alert({
+                        title: '<?= __('Error') ?>',
+                        content: response.responseJSON.message || '<?= __('An error occurred while generating the file.') ?>'
+                    });
+                }
+            },
+            onFailure: function() {
+                $('#llmstxt_generate_button').prop('disabled', false).text('<?= __('Generate Now') ?>');
+                alert({
+                    title: '<?= __('Error') ?>',
+                    content: '<?= __('An error occurred while generating the file.') ?>'
+                });
+            }
+        });
+    });
+});
+</script>
+<?= $block->getButtonHtml() ?>
