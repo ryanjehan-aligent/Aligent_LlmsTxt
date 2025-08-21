@@ -5,7 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.2] - 2025-08-21
+
+### Fixed
+- **Critical Installation Issue**: Resolved "Package not found" error when trying to install via Composer
+- Installation methods now work properly with multiple options provided
+- Corrected installation instructions in all documentation
+
+### Added
+- Comprehensive INSTALLATION_GUIDE.md with detailed step-by-step instructions
+- Multiple installation methods: Git clone, Composer with Git repository, local development, manual installation
+- Troubleshooting section with common issues and solutions
+- Verification steps to confirm successful installation
+- Enhanced composer.json description with installation command
+
+### Changed
+- Updated README.md with working installation commands
+- Enhanced release notes with correct installation instructions
+- Improved documentation structure for better user experience
+
+### Documentation
+- Fixed installation commands in previous release notes
+- Added upgrade procedures for different installation types
+- Enhanced troubleshooting and support information
+
+## [1.0.1] - 2025-08-21
 
 ### Removed
 - Hourly frequency option from scheduling (keeping Daily, Weekly, Monthly, Yearly, and Never)
