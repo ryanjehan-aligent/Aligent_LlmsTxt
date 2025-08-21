@@ -1,0 +1,77 @@
+{
+    "name": "aligent/magento2-llms-txt",
+    "description": "Magento 2 module for generating llms.txt files to make store content accessible to AI assistants",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Aligent Consulting",
+            "email": "info@aligent.com.au",
+            "homepage": "https://www.aligent.com.au"
+        }
+    ],
+    "keywords": [
+        "magento2",
+        "llms",
+        "ai",
+        "artificial-intelligence",
+        "content-generation",
+        "seo"
+    ],
+    "require": {
+        "php": "^8.1",
+        "magento/framework": ">=103.0.0",
+        "magento/module-store": "*",
+        "magento/module-cms": "*",
+        "magento/module-catalog": "*",
+        "magento/module-config": "*",
+        "magento/module-backend": "*",
+        "magento/module-cron": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Aligent\\LlmsTxt\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aligent\\LlmsTxt\\Test\\": "Test/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit",
+        "test:unit": "phpunit --testsuite='Unit Tests'",
+        "test:integration": "phpunit --testsuite='Integration Tests'",
+        "test:coverage": "phpunit --coverage-html coverage",
+        "cs:check": "phpcs --standard=Magento2 .",
+        "cs:fix": "phpcbf --standard=Magento2 ."
+    },
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true,
+            "magento/inventory-composer-installer": true,
+            "magento/module-package-dependency-check": true,
+            "magento/composer-root-update-plugin": true
+        }
+    },
+    "support": {
+        "issues": "https://github.com/aligent/magento2-llms-txt/issues",
+        "source": "https://github.com/aligent/magento2-llms-txt"
+    }
+}

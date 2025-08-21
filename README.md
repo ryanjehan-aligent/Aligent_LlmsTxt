@@ -24,6 +24,35 @@ The Aligent_LlmsTxt module generates store-specific llms.txt files to make your 
 
 ## Installation
 
+### Via Composer (Recommended)
+
+1. Install the module via Composer:
+   ```bash
+   composer require aligent/magento2-llms-txt
+   ```
+
+2. Enable the module:
+   ```bash
+   bin/magento module:enable Aligent_LlmsTxt
+   ```
+
+3. Run setup upgrade:
+   ```bash
+   bin/magento setup:upgrade
+   ```
+
+4. Deploy static content (if in production mode):
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
+
+5. Clear cache:
+   ```bash
+   bin/magento cache:clean
+   ```
+
+### Manual Installation
+
 1. Copy the module to your Adobe Commerce installation:
    ```bash
    cp -r app/code/Aligent/LlmsTxt /path/to/magento/app/code/Aligent/
@@ -48,6 +77,12 @@ The Aligent_LlmsTxt module generates store-specific llms.txt files to make your 
    ```bash
    bin/magento cache:clean
    ```
+
+## Requirements
+
+- PHP 8.1 or higher
+- Adobe Commerce / Magento 2.4.x or higher
+- Composer (for Composer installation method)
 
 ## Configuration
 

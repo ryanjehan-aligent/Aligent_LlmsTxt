@@ -1,0 +1,54 @@
+# IDE and Editor files
+.idea/
+*.swp
+*.swo
+*~
+.vscode/
+*.sublime-*
+
+# Claude Code documentation
+CLAUDE.md
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Composer
+/vendor/
+composer.lock
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build and cache directories
+/build/
+/dist/
+/.cache/
+/.tmp/
+
+# Testing
+/phpunit.xml
+/coverage/
+/.phpunit.result.cache
+
+# Magento specific
+/pub/media/
+/pub/static/
+/var/
+/generated/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
