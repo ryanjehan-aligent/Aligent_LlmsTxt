@@ -169,7 +169,7 @@ class GenerateTest extends TestCase
                 ['aligent_llmstxt/status/last_generated_time']
             )
             ->willReturnOnConsecutiveCalls(
-                Frequency::FREQUENCY_HOURLY,
+                Frequency::FREQUENCY_DAILY,
                 null
             );
 

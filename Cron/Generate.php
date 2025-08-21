@@ -122,10 +122,6 @@ class Generate
 
         // Check if it's time to generate based on frequency
         switch ($frequency) {
-            case Frequency::FREQUENCY_HOURLY:
-                // Run if an hour has passed
-                return ($currentTime - $lastGeneratedTime) >= 3600;
-
             case Frequency::FREQUENCY_DAILY:
                 // Run if a day has passed and time matches
                 return $this->isDailyScheduleTime($lastGeneratedTime, $currentTime, $configuredTime);
