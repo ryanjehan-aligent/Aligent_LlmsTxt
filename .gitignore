@@ -54,4 +54,4 @@ yarn-error.log*
 *.log
 
 #Release notes
-RELEASE_NOTES.md
+RELEASE_NOTES*

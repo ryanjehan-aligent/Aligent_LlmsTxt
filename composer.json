@@ -1,6 +1,6 @@
 {
     "name": "aligent/magento2-llms-txt",
-    "description": "Magento 2 module for generating llms.txt files to make store content accessible to AI assistants",
+    "description": "Magento 2 module for generating llms.txt files to make store content accessible to AI assistants. Install via: git clone https://github.com/aligent/magento2-llms-txt.git app/code/Aligent/LlmsTxt",
     "type": "magento2-module",
     "license": "proprietary",
     "version": "1.0.1",
