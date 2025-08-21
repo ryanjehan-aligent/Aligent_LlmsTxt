@@ -80,7 +80,7 @@ The Aligent_LlmsTxt module generates store-specific llms.txt files to make your 
 ## Requirements
 
 - PHP 8.1 or higher
-- Adobe Commerce / Magento 2.4.x or higher
+- Adobe Commerce / Magento 2.4.4 or higher
 - Composer (for Composer installation method)
 
 ## Configuration
